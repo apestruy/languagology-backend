@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_07_22_213232) do
   end
 
   create_table "quiz_translations", force: :cascade do |t|
+    t.string "correct"
     t.bigint "quiz_id", null: false
     t.bigint "translation_id", null: false
     t.datetime "created_at", precision: 6, null: false
