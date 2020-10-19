@@ -1,6 +1,6 @@
 class Api::V1::QuizzesController < ApplicationController
     def index
-        @quizzes = Quiz.all
+        @quizzes = Quiz.all.select { |quiz| quiz.user_id == current_user.id }
         render json: @quizzes
     end
 
